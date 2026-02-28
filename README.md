@@ -1,0 +1,1 @@
+An AI-based voice translation system that converts spoken language into another language in real-time. The system captures voice input, converts it to text, translates it into a target language, and outputs the translated speech.
