@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Voice Translator (Flask)</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background:#f2f2f7; padding:30px; color: #333; }
+    .card { background:white; padding:25px; border-radius:14px; max-width:550px; margin:auto; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+    h2 { text-align: center; color: #2c3e50; }
+    button { padding:12px 18px; border-radius:10px; border:none; font-weight:bold; cursor:pointer; transition: 0.3s; margin: 5px 0; }
+    .record { background:#e74c3c; color:white; width: 100%; }
+    .record:hover { background: #c0392b; }
+    .stop { background:#2980b9; color:white; width: 100%; }
+    #uploadBtn { background: #27ae60; color: white; margin-top: 10px; }
+    #uploadBtn:hover { background: #219150; }
+    select { padding:10px; border-radius:8px; margin-top:8px; width: 100%; border: 1px solid #ddd; }
+    audio { width:100%; margin-top:15px; border-radius: 8px; }
+    hr { margin: 20px 0; border: 0; border-top: 1px solid #eee; }
+    .upload-section { background: #f9f9f9; padding: 15px; border-radius: 10px; border: 1px dashed #ccc; }
+    #result { line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🎧 AI Voice Translator</h2>
+
+    <label><b>Step 1: Select Target Language</b></label><br>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+      <option value="hi">Hindi</option>
+      <option value="ar">Arabic</option>
+      <option value="ja">Japanese</option>
+      <option value="ko">Korean</option>
+      <option value="ur" selected>Urdu</option>
+    </select>
+
+    <br><br>
+
+    <label><b>Step 2: Record your voice</b></label>
+    <button id="recordBtn" class="record">🎤 Start Recording</button>
+
+    <hr>
+
+    <div class="upload-section">
+      <h4>📁 Or upload audio file</h4>
+      <input type="file" id="audioFile" accept="audio/*">
+      <button id="uploadBtn">🚀 Upload & Translate</button>
+    </div>
+
+    <div id="result" style="margin-top:20px"></div>
+
+    <audio id="audioPlayer" controls></audio>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
